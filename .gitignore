@@ -35,6 +35,10 @@ src/visuals/index.ts
 public/musica/*
 !public/musica/fondo-*.mp3
 # Skills de Remotion: las instala `npm run setup` desde su fuente oficial
-.agents/
+# (la skill propia crear-video sí se publica, también para Codex en .agents/skills)
+.agents/*
+!.agents/skills/
+.agents/skills/*
+!.agents/skills/crear-video/
 skills-lock.json
 .claude/skills/remotion-*

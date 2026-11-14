@@ -2,13 +2,13 @@
 
 Crea **Reels / TikTok / Shorts explicativos en español** con motion graphics hechos en código: ilustración animada con cámara continua, voz sintética, subtítulos palabra por palabra, efectos de sonido sincronizados, música original y masterización lista para publicar.
 
-Funciona con **[Claude Code](https://claude.com/claude-code)**: le pides un video y la skill **`crear-video`** te entrevista, investiga fuentes, te propone guion y storyboard para que los apruebes, ilustra las escenas, revisa la composición automáticamente y te entrega el MP4, la portada y la descripción.
+Funciona con **[Claude Code](https://claude.com/claude-code)** y también con **Codex** (u otro agente compatible con Agent Skills): le pides un video y la skill **`crear-video`** te entrevista, investiga fuentes, te propone guion y storyboard para que los apruebes, ilustra las escenas, revisa la composición automáticamente y te entrega el MP4, la portada y la descripción.
 
 > Ejemplo de pedido: *«Hazme un video de 45 segundos sobre por qué nos suenan las tripas»*.
 
 ## Instalación
 
-Requisitos: **Node.js ≥ 20**, **Python 3.12**, **Git** y **Claude Code** (plan de pago de Claude). Recomendado: GPU NVIDIA (para generar música a medida; sin GPU se usan fondos genéricos incluidos).
+Requisitos: **Node.js ≥ 20**, **Python 3.12**, **Git** y un agente: **Claude Code** (plan de pago de Claude) o **Codex** (con búsqueda web activada para investigar fuentes). Recomendado: GPU NVIDIA (para generar música a medida; sin GPU se usan fondos genéricos incluidos).
 
 ```bash
 npx degit CesarUTP/videos-con-ia mi-canal
@@ -26,7 +26,7 @@ npm run setup
 
 ## Uso
 
-1. Abre la carpeta con Claude Code.
+1. Abre la carpeta con tu agente (Claude Code lee `CLAUDE.md` y `.claude/skills/`; Codex lee `AGENTS.md` y `.agents/skills/`).
 2. Pide tu video. La skill pregunta tema, duración, fuentes, voz y música; elige el estilo visual según el tema (**cuerpo** para medicina/biología, **historia** para relatos y personajes, **técnico** para tecnología/física).
 3. Aprueba el guion y el storyboard.
 4. Recibe `out/<video>.mp4`, `out/<video>/portada.png` y `out/<video>/descripcion.txt`.

@@ -2,7 +2,7 @@
 
 Reels verticales (1080×1920, 30 fps) hechos con **Remotion** (React), voz sintética en español, subtítulos palabra por palabra, efectos de sonido y música original. Referencias de estilo en `Ejemplos/` (@resultaaquee; los MP4 no se distribuyen).
 
-**Para crear un video, usa la skill `crear-video`** (`skills/crear-video/SKILL.md`): entrevista, investigación, guion + storyboard con aprobación, producción, QA y entrega.
+**Para crear un video, usa la skill `crear-video`** (`skills/crear-video/SKILL.md`; copias en `.claude/skills/` y `.agents/skills/`. `AGENTS.md` es copia de este archivo para Codex: edita siempre CLAUDE.md y corre `npm run check`): entrevista, investigación, guion + storyboard con aprobación, producción, QA y entrega.
 
 ## Regla número 1: LA IMAGEN EXPLICA, EL TEXTO NO
 

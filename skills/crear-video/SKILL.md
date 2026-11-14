@@ -5,19 +5,21 @@ description: Crea Reels/TikTok/Shorts explicativos en español con motion graphi
 
 # Crear video explicativo
 
-Motor: el proyecto **videos-con-ia** (Remotion + pipeline Python). Las reglas de estilo, el kit y los comandos están en el `CLAUDE.md` del proyecto: **léelo completo antes de producir** y síguelo al pie de la letra.
+Motor: el proyecto **videos-con-ia** (Remotion + pipeline Python). Funciona con Claude Code, Codex y cualquier agente que siga el estándar Agent Skills. Las reglas de estilo, el kit y los comandos están en `CLAUDE.md` (copia idéntica en `AGENTS.md`): **léelo completo antes de producir** y síguelo al pie de la letra.
 
 ## 0. Comprobar el motor
 
-- Si en la carpeta actual existe `scripts/video.mjs` y `CLAUDE.md`, el motor está instalado: sigue al paso 1.
+- Si en la carpeta actual existe `scripts/video.mjs` y `CLAUDE.md`/`AGENTS.md`, el motor está instalado: sigue al paso 1.
 - Si no existe, pregunta dónde instalarlo y ejecuta (reemplaza la carpeta):
   ```
   npx degit CesarUTP/videos-con-ia <carpeta>
   cd <carpeta> && npm run setup
   ```
-  `setup` instala Node/Python, efectos y (si hay GPU NVIDIA) el generador de música. Después pide al usuario abrir Claude Code **dentro de esa carpeta** y repetir su pedido (así se cargan `CLAUDE.md` y esta skill). Requisitos: Node ≥ 20, Python 3.12, Git; GPU NVIDIA opcional (solo para música a medida).
+  `setup` instala Node/Python, efectos y (si hay GPU NVIDIA) el generador de música. Después pide al usuario abrir su agente (Claude Code, Codex…) **dentro de esa carpeta** y repetir su pedido (así se cargan las reglas del proyecto y esta skill). Requisitos: Node ≥ 20, Python 3.12, Git; GPU NVIDIA opcional (solo para música a medida).
 
-## 1. Entrevista (usa AskUserQuestion; máximo 2 rondas)
+## 1. Entrevista (máximo 2 rondas)
+
+Usa la herramienta de preguntas de tu agente si existe (en Claude Code, `AskUserQuestion`); si no, pregunta en el chat con opciones numeradas.
 
 Pregunta solo lo que no esté ya claro en el pedido:
 1. **Tema y ángulo**: qué pregunta responde el video (el gancho). Si el usuario solo da un tema, propone 2–3 ángulos con gancho.
@@ -29,6 +31,8 @@ Pregunta solo lo que no esté ya claro en el pedido:
 Elige tú el **registro visual** según el tema (tabla en CLAUDE.md: `cuerpo` = medicina/biología, `historia` = relatos/personajes, `tecnico` = tecnología/física) y díselo al usuario en una línea.
 
 ## 2. Investigación y verificación
+
+Requiere acceso web (en Codex, activa la búsqueda web). Si no hay, pide al usuario sus fuentes.
 
 - Busca fuentes citables (enciclopedias, StatPearls/NCBI, instituciones, papers). Lee la página, no solo el resultado de búsqueda.
 - Anota cada afirmación con su fuente. **Si una cifra no tiene fuente sólida, no se dice.** Cifras disputadas: se omiten o se dan como rango con fuente.
@@ -52,7 +56,7 @@ npm run nuevo -- <slug> --estilo=<registro>    # andamiaje: guion + escenas base
 2. `npm run voz -- <slug>`
 3. Música: con GPU `npm run musica -- <slug> --para <slug> --estilo <registro> --prompt "<instrumentos y ánimo, en inglés>"` → `"musica": {"src": "musica/<slug>.wav", "volumen": 0.55}`. Sin GPU: `"musica": {"src": "musica/fondo-<registro>.mp3", "volumen": 0.5}` (150 s; para videos más largos se necesita la música a medida).
 4. Ilustra en `src/visuals/<slug>/scenes.tsx` con el kit (`Camera`, `Personaje`, `Habitacion`, `Ventana`, `Pulse`, `Label`, `Badge`, `Sfx`, `REAL` + `sombreado()`): colores reales, cámara continua, `useCues` para sincronizar, `<Sfx>` para todo lo que suena. Marca el arte clave con `data-qa="importante"` y la utilería móvil con `data-qa="objeto"`. Pastillas sin x/y.
-5. `npm run stills -- <slug>` → **mira `out/<slug>/hoja.png` completa** (lee la imagen) y corrige: cosas cortadas, caras tapadas, planos vacíos, avisos `⚠ [cue]`.
+5. `npm run stills -- <slug>` → **mira `out/<slug>/hoja.png` completa** (ábrela como imagen; si tu agente no puede ver imágenes, pide al usuario que la revise) y corrige: cosas cortadas, caras tapadas, planos vacíos, avisos `⚠ [cue]`.
 6. `npm run qa -- <slug>` → repite corrección hasta **✔ sin solapes**.
 7. `npm run render -- <slug>` (masteriza a -14 LUFS y genera portada + descripción).
 8. `npm run check`.
