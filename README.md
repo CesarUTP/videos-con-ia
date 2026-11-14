@@ -11,7 +11,7 @@ Funciona con **[Claude Code](https://claude.com/claude-code)**: le pides un vide
 Requisitos: **Node.js ≥ 20**, **Python 3.12**, **Git** y **Claude Code** (plan de pago de Claude). Recomendado: GPU NVIDIA (para generar música a medida; sin GPU se usan fondos genéricos incluidos).
 
 ```bash
-npx degit __REPO__ mi-canal
+npx degit CesarUTP/videos-con-ia mi-canal
 ```
 ```bash
 cd mi-canal
@@ -22,7 +22,7 @@ npm run setup
 
 `setup` instala las dependencias de Node y Python, la biblioteca de efectos, las skills de Remotion y (si hay GPU) el generador de música ACE-Step. Usa `npm run setup -- --sin-musica` para omitir la música a medida.
 
-¿Solo quieres la skill en otro proyecto? `npx skills add __REPO__` — la skill detecta si falta el motor y lo instala.
+¿Solo quieres la skill en otro proyecto? `npx skills add CesarUTP/videos-con-ia` — la skill detecta si falta el motor y lo instala.
 
 ## Uso
 

@@ -12,7 +12,7 @@ Motor: el proyecto **videos-con-ia** (Remotion + pipeline Python). Las reglas de
 - Si en la carpeta actual existe `scripts/video.mjs` y `CLAUDE.md`, el motor está instalado: sigue al paso 1.
 - Si no existe, pregunta dónde instalarlo y ejecuta (reemplaza la carpeta):
   ```
-  npx degit __REPO__ <carpeta>
+  npx degit CesarUTP/videos-con-ia <carpeta>
   cd <carpeta> && npm run setup
   ```
   `setup` instala Node/Python, efectos y (si hay GPU NVIDIA) el generador de música. Después pide al usuario abrir Claude Code **dentro de esa carpeta** y repetir su pedido (así se cargan `CLAUDE.md` y esta skill). Requisitos: Node ≥ 20, Python 3.12, Git; GPU NVIDIA opcional (solo para música a medida).

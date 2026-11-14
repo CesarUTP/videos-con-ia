@@ -2,7 +2,10 @@
   "name": "videos-con-ia",
   "version": "1.0.0",
   "description": "Reels explicativos en español con motion graphics en código (Remotion) + skill de Claude Code",
-  "repository": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CesarUTP/videos-con-ia.git"
+  },
   "license": "MIT",
   "engines": {
     "node": "^20.19.0 || ^22.13.0 || >=24"
