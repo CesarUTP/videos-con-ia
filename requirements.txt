@@ -1,0 +1,12 @@
+# Instalar con: npm run setup   (usa el índice CUDA 12.8 de PyTorch para la GPU)
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.11.0+cu128
+torchaudio==2.11.0+cu128
+edge-tts==7.3.1
+faster-whisper==1.2.1
+kokoro==0.9.4
+qwen-tts==0.1.1
+soundfile==0.14.0
+numpy==2.5.4
+imageio-ffmpeg==0.8.1
+pillow==12.3.0

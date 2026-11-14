@@ -5,3 +5,36 @@ dist
 
 # Ignore the output video from Git but not videos you import into src/.
 out
+
+# Python
+.venv
+__pycache__
+
+# Audio y manifests generados por pipeline/voz.py (se regeneran con npm run voz)
+public/videos/
+
+# Herramientas pesadas (modelos y entornos propios)
+tools/
+public/musica/_tmp/
+
+# Videos de referencia de otras cuentas: solo para estudio local, no se suben
+Ejemplos/*.mp4
+.cache/
+.claude/settings.local.json
+
+# ── Repositorio público ──────────────────────────────────────────────
+# Los videos de cada usuario son suyos: solo se publica la plantilla.
+videos/*
+!videos/_plantilla/
+# Ilustraciones de cada video: solo se publica la demo del kit.
+src/visuals/*
+!src/visuals/demo/
+# Registro de visuales: lo genera scripts/registrar.mjs
+src/visuals/index.ts
+# Música: solo los fondos genéricos por registro (las pistas a medida son de cada video)
+public/musica/*
+!public/musica/fondo-*.mp3
+# Skills de Remotion: las instala `npm run setup` desde su fuente oficial
+.agents/
+skills-lock.json
+.claude/skills/remotion-*

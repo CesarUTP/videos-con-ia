@@ -1,0 +1,46 @@
+{
+  "titulo": "Título interno del video",
+  "voz": {
+    "motor": "edge",
+    "voz": "es-MX-JorgeNeural",
+    "velocidad": "+8%",
+    "tono": "+0Hz"
+  },
+  "estilo": "cuerpo",
+  "sfx": true,
+  "musica": null,
+  "fuentes": [
+    "Autor/Institución, título del documento, año, URL"
+  ],
+  "escenas": [
+    {
+      "id": "gancho",
+      "tipo": "visual",
+      "narracion": "Pregunta o tensión en dos segundos, con una palabra **clave**.",
+      "props": { "visual": "<tema>/gancho" },
+      "transicion": "corte"
+    },
+    {
+      "id": "mecanismo",
+      "tipo": "visual",
+      "narracion": "Cada frase describe algo que se VE en la ilustración: la cámara se acerca al **detalle**.",
+      "props": { "visual": "<tema>/mecanismo" },
+      "transicion": "zoom"
+    },
+    {
+      "id": "detalle",
+      "tipo": "visual",
+      "narracion": "El corte transversal muestra lo invisible y una **lectura** de instrumento con el dato.",
+      "props": { "visual": "<tema>/detalle" },
+      "transicion": "zoom-out"
+    },
+    {
+      "id": "cierre",
+      "tipo": "visual",
+      "narracion": "Payoff que vuelve a la imagen del inicio y cierra el **bucle**.",
+      "props": { "visual": "<tema>/cierre", "fuente": "Fuente exacta de cada afirmación" },
+      "pausa": 0.6,
+      "transicion": "corte"
+    }
+  ]
+}

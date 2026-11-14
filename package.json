@@ -1,18 +1,30 @@
 {
-  "name": "_scaffold",
+  "name": "videos-con-ia",
   "version": "1.0.0",
-  "description": "My Remotion video",
+  "description": "Reels explicativos en español con motion graphics en código (Remotion) + skill de Claude Code",
   "repository": {},
-  "license": "UNLICENSED",
+  "license": "MIT",
   "engines": {
     "node": "^20.19.0 || ^22.13.0 || >=24"
   },
   "private": true,
   "dependencies": {
+    "@remotion/bundler": "4.0.543",
+    "@remotion/captions": "4.0.543",
     "@remotion/cli": "4.0.543",
+    "@remotion/google-fonts": "4.0.543",
+    "@remotion/install-whisper-cpp": "4.0.543",
+    "@remotion/media": "4.0.543",
+    "@remotion/media-utils": "4.0.543",
+    "@remotion/paths": "4.0.543",
+    "@remotion/renderer": "4.0.543",
+    "@remotion/shapes": "4.0.543",
+    "@remotion/transitions": "4.0.543",
+    "@remotion/zod-types": "4.0.543",
     "react": "19.3.1",
     "react-dom": "19.3.1",
-    "remotion": "4.0.543"
+    "remotion": "4.0.543",
+    "zod": "4.6.7"
   },
   "devDependencies": {
     "@remotion/eslint-config-flat": "4.0.543",
@@ -26,7 +38,21 @@
     "dev": "remotion studio",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "voz": "node scripts/video.mjs voz",
+    "voces": "node scripts/video.mjs voces",
+    "muestras": "node scripts/video.mjs muestras",
+    "stills": "node scripts/video.mjs stills",
+    "render": "node scripts/video.mjs render",
+    "video": "node scripts/video.mjs todo",
+    "nuevo": "node scripts/video.mjs nuevo",
+    "sfx": "node scripts/video.mjs sfx",
+    "setup": "node scripts/setup.mjs",
+    "portada": "node scripts/video.mjs portada",
+    "musica": "node scripts/video.mjs musica",
+    "predev": "node scripts/registrar.mjs",
+    "check": "node scripts/registrar.mjs && node scripts/sync-skill.mjs && node scripts/validar.mjs && tsc --noEmit && eslint src",
+    "qa": "node scripts/video.mjs qa"
   },
   "allowScripts": {
     "esbuild": false
